@@ -1,0 +1,20 @@
+@import "../../media-query.less";
+
+.user {
+    border: 1px solid #007bff;
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    right: 1rem;
+    top: .5rem;
+
+    @media @tablet {
+        position: static;
+    }
+    
+    img {
+        width: 100%;
+    }
+}

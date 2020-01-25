@@ -3,7 +3,6 @@
 .customers-table-container {
     height: 26rem;
     position: relative;
-    overflow: hidden;
     min-width: 14rem;
     
     h6 {
@@ -89,15 +88,14 @@
         right: 0;
         font-size: 0.8rem;
 
-        @media @mobile {
-            .add-customer-text {
+        .add-customer-text {
+            @media @mobile {
                 display: none;
             }
-        }
 
-        @media @tablet {
-            .add-customer-text {
+            @media @tablet {
                 display: inline-block;
+                margin-left: 1rem;
             }
         }
     }
