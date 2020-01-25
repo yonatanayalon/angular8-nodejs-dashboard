@@ -1,0 +1,28 @@
+<div class="customer-container">
+    <h6>Customers Table > Customer Details</h6>
+    <div class="customer-details-container" [ngClass]="{'edit': editMode}" *ngIf="customer">
+        <div class="customer-details-item row">
+            <div class="item-label col">First Name</div>
+            <div class="item-value col"><input (ngModelChange)="setDataComplete()" placeholder="Enter Customer First Name" required type="text" [(ngModel)]="customer.fName" [disabled]="!editMode"></div>
+        </div>
+        <div class="customer-details-item row">
+            <div class="item-label col">Last Name</div>
+            <div class="item-value col"><input (ngModelChange)="setDataComplete()" placeholder="Enter Customer Last Name" type="text" [(ngModel)]="customer.lName" [disabled]="!editMode"></div>
+        </div>
+        <div class="customer-details-item row">
+            <div class="item-label col">Status</div>
+            <div class="item-value col"><input (ngModelChange)="setDataComplete()" placeholder="Enter Customer Status" type="text" [(ngModel)]="customer.status" [disabled]="!editMode"></div>
+        </div>
+        <div class="customer-details-item row">
+            <div class="item-label col">Group</div>
+            <div class="item-value col"><input (ngModelChange)="setDataComplete()" placeholder="Enter Customer Group" type="text" [(ngModel)]="customer.group" [disabled]="!editMode"></div>
+        </div>
+        <div class="customer-actions">
+            <div *ngIf="!editMode" class="action-item btn btn-danger" (click)="deleteCustomer()"><fa-icon [icon]="faTrash"></fa-icon> Delete</div>
+            <div class="action-item btn btn-primary" *ngIf="!editMode" (click)="editCustomer()"><fa-icon [icon]="faUserEdit"></fa-icon> Edit</div>
+            <div class="action-item btn btn-secondary" *ngIf="editMode" (click)="dismissEdit()"><fa-icon [icon]="faWindowClose"></fa-icon> Cancel</div>
+            <button class="action-item btn btn-primary" [disabled]="!dataIsComplete" *ngIf="editMode" (click)="saveCustomer()"><fa-icon [icon]="faSave"></fa-icon> Save</button>
+        </div>
+    </div>
+    <p *ngIf="errorMessage">{{errorMessage}}</p>
+</div>

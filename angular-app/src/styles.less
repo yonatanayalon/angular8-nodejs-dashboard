@@ -1,0 +1,40 @@
+@import "./media-query.less";
+
+body, html {
+  min-height: 100%;
+  min-width: 320px;
+}
+body {
+  overflow-x: hidden;
+  font: 14px/16px Roboto,sans-serif;
+}
+ 
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+  
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+  
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}  
+
+.d-flex {
+  margin: 0 -15px;
+}
+
+#page-content-wrapper {
+  flex: 1;
+  overflow: hidden;
+}
+
+@media @tablet {
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+    padding-right: 0;
+  }
+}

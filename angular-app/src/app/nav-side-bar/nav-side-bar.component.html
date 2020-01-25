@@ -1,0 +1,11 @@
+<div class="bg-light border-right {{state}}" id="sidebar-wrapper">
+    <button class="btn btn-primary" (click)="toggleNavigationBar()"><fa-icon [icon]="toggleIcon"></fa-icon></button>
+    <div class="sidebar-heading"><fa-icon [icon]="faLandmark" title="Home"></fa-icon><div class="heading-text">Customers Dashboard</div></div>
+    <div class="list-group list-group-flush">
+        <a routerLink="/Customers" routerLinkActive="active" class="list-group-item list-group-item-action"><fa-icon [icon]="faTable" title="Dashboard"></fa-icon><div class="list-group-item-text">Customers Table</div></a>
+        <a href="#" class="list-group-item list-group-item-action"><fa-icon [icon]="faBarcode" title="Barcode"></fa-icon><div class="list-group-item-text">Barcode</div></a>
+        <a href="#" class="list-group-item list-group-item-action"><fa-icon [icon]="faSearchPlus" title="Overview"></fa-icon><div class="list-group-item-text">Overview</div></a>
+        <a href="#" class="list-group-item list-group-item-action"><fa-icon [icon]="faCalendarTimes" title="Events"></fa-icon><div class="list-group-item-text">Events</div></a>
+        <a href="#" class="list-group-item list-group-item-action"><fa-icon [icon]="faUser" title="Profile"></fa-icon><div class="list-group-item-text">Profile</div></a>
+    </div>
+</div>

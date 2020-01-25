@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <div class="d-flex" id="wrapper" #ngWrapper>
+    <app-nav-side-bar (toggleNavBar)="toggleSideMenu()" [state]="sideBarState"></app-nav-side-bar>
+    <div id="page-content-wrapper">
+      <app-nav-top-bar></app-nav-top-bar>
+      <div class="container-fluid main-content-container">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

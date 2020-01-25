@@ -1,0 +1,31 @@
+<div class="customers-table-container">
+    <h6>Customers Table</h6>
+    <div class="customer-table-rows">
+        <div class="customer-headers row">
+            <div class="header-column bg-primary text-white col">First Name</div>
+            <div class="header-column bg-primary text-white col">Last Name</div>
+            <div class="header-column bg-primary text-white col">Status</div>
+            <div class="header-column bg-primary text-white col">Group</div>
+        </div>
+        <div class="customer-row row" *ngFor="let customer of customers" (click)="selectCustomer(customer)">
+            <div class="customer-row-column col" [attr.title]="customer.fName">{{customer.fName}}</div>
+            <div class="customer-row-column col" [attr.title]="customer.lName">{{customer.lName}}</div>
+            <div class="customer-row-column col" [attr.title]="customer.status">{{customer.status}}</div>
+            <div class="customer-row-column col" [attr.title]="customer.group">{{customer.group}}</div>
+        </div>
+        <div class="btn btn-primary add-customer-button" (click)="addCustomer()"><fa-icon [icon]="faUserPlus" title="Add New Customer"></fa-icon> <div class="add-customer-text">Add Customer</div></div>
+    </div>
+    <nav class="pagination-container position-absolute fixed-bottom">
+        <ul class="pagination justify-content-center" *ngIf="customersPages">
+          <li class="page-item" [ngClass]="{'disabled': (currentPage - 1 < 0)}">
+            <span class="page-link btn" (click)="setPage(currentPage - 1)">Previous</span>
+          </li>
+          <li class="page-item" [ngClass]="{'active': currentPage === i}" *ngFor="let page of customersPages; index as i">
+            <span class="page-link" [ngClass]="{'btn': currentPage !== i}" (click)="currentPage !== i ? setPage(i) : ''">{{i + 1}} <span class="sr-only">(current)</span></span>
+          </li>
+          <li class="page-item" [ngClass]="{'disabled': (currentPage + 1 > customersPages.length - 1)}">
+            <span class="page-link btn" (click)="setPage(currentPage + 1)">Next</span>
+          </li>
+        </ul>
+    </nav>
+</div>
